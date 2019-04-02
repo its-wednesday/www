@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { Component, Fragment } from 'react';
+import { highlightGradient } from 'styles/global/colors';
 
 interface IRollingTextProps {
   animationDuration?: number;
@@ -38,10 +39,7 @@ const MaskedText = styled.span`
   /* stylelint-disable-next-line */
   -webkit-background-clip: text !important;
   color: transparent !important;
-  background-image: radial-gradient(
-    orange,
-    purple
-  ) !important;
+  background-image: ${highlightGradient};
   background-size: 100vw 100vh;
 `;
 
