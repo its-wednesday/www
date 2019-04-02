@@ -18,6 +18,7 @@ const TextRelative = styled.div`
 width: 100%;
   position: relative;
   perspective: 320px;
+  overflow: visible;
 `;
 
 const TextAbsolute = styled.span`
@@ -25,6 +26,11 @@ const TextAbsolute = styled.span`
 
   position: absolute;
   width: 100%;
+  overflow: visible;
+`;
+
+const TextInvisible = styled.span`
+  visibility: hidden;
 `;
 
 const MaskedText = styled.span`
@@ -130,6 +136,8 @@ const TextFragments = ({
           }
         </Fragment>
       </TextAbsolute>
+
+      <TextInvisible>It's Wednesday {` `} {currentPhrase}</TextInvisible>
     </TextRelative>
   );
 

@@ -1,12 +1,16 @@
+import { Fragment } from 'react';
 import styled from 'styled-components';
 import { H1 } from 'components/text';
 import { Container } from 'components/grid';
 import { Logo } from 'components/logo';
 import { RollingText } from 'components/rollingText';
+import { PageDivider } from 'components/pageDivider';
 
-const InlineH1 = styled(H1)`
-  display: inline;
-`;
+console.log('>>>>>>', H1);
+
+// const InlineH1 = styled(H1)`
+//   display: inline;
+// `;
 
 const heroPhrases = [
   'builds amazing digital experiences.',
@@ -15,14 +19,20 @@ const heroPhrases = [
 ];
 
 const Home = () => (
-  <Container>
-    <Logo />
-      <InlineH1>
-        <RollingText tag="span"
-          phrases={heroPhrases}
-        />
-      </InlineH1>
-  </Container>
+  <Fragment>
+    <Container>
+      <Logo />
+        <H1>
+          <RollingText tag="span"
+            phrases={heroPhrases}
+          />
+
+        </H1>
+
+
+    </Container>
+    <PageDivider />
+  </Fragment>
 );
 
 export default Home;

@@ -1,5 +1,6 @@
 import Document, { Head, Main, NextScript, NextDocumentContext } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import { Theme } from 'styles/global/theme';
 import { Typography } from 'styles/global/typography';
 
 interface IHtml {
@@ -21,8 +22,8 @@ export default class Html extends Document<IHtml> {
     return (
       <html>
         <Head>
-          <title>It's Wednesday | A tiny application development company</title>
           <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700" rel="stylesheet"></link>
+          <Theme />
           <Typography />
           {this.props.styleTags}
         </Head>
