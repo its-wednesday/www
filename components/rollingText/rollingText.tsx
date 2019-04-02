@@ -268,7 +268,6 @@ export class RollingText extends Component<IRollingTextProps, IRollingTextState>
   }
 
   render() {
-    console.log('leak');
     const { phrases } = this.props;
     let result = null;
 
