@@ -22,5 +22,8 @@ jobs:
       - setup_remote_docker:
         docker_layer_caching: true
 
-      - run:
-        name:
+      - run: |
+        TAG=$CIRCLE_BUILD_NUM
+        docker build -t wednesdaywednesday/www:$TAG .
+        docker login -u $DOCKER_USER -p $DOCKER_PASS
+        docker push wednesdaywednesday/www:$TAG
