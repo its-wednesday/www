@@ -12,8 +12,11 @@ jobs:
 
     steps:
       - checkout
-      - setup_remote_docker
+
+      - setup_remote_docker:
+        docker_layer_caching: true # (3)
+
       - run: |
           docker build -t itswednesday/www:$CIRCLE_BUILD_NUM .
-          docker login -u $DOCKER_USER --password-stdin < ~/$DOCKER_PASS
+          echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
           docker push itswednesday/www:$CIRCLE_BUILD_NUM
