@@ -6,23 +6,14 @@ version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
       - image: circleci/node:11.9.0
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
 
     working_directory: ~/repo
 
     steps:
       - checkout
-
       - setup_remote_docker
-
       - run: |
-        TAG=$CIRCLE_BUILD_NUM
-        docker build -t itswednesday/www:$TAG .
-        docker login -u $DOCKER_USER -p $DOCKER_PASS
-        docker push itswednesday/www:$TAG
+          docker build -t itswednesday/www:$CIRCLE_BUILD_NUM .
+          docker login -u $DOCKER_USER --password-stdin < ~/$DOCKER_PASS
+          docker push itswednesday/www:$CIRCLE_BUILD_NUM
