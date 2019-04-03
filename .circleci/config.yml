@@ -18,5 +18,5 @@ jobs:
 
       - run: |
           docker build -t itswednesday/www:$CIRCLE_BUILD_NUM .
-          echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+          docker login -u $DOCKER_USER -p $DOCKER_PASS
           docker push itswednesday/www:$CIRCLE_BUILD_NUM
