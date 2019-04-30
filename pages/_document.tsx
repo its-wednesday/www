@@ -2,6 +2,7 @@ import Document, { Head, Main, NextScript, NextDocumentContext } from 'next/docu
 import { ServerStyleSheet } from 'styled-components';
 import { Theme } from 'styles/global/theme';
 import { Typography } from 'styles/global/typography';
+import { Favicon } from './mixins/favicon';
 
 interface IHtml {
   styleTags: React.ElementType;
@@ -22,7 +23,9 @@ export default class Html extends Document<IHtml> {
     return (
       <html>
         <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700" rel="stylesheet"></link>
+          <Favicon />
           <Theme />
           <Typography />
           {this.props.styleTags}

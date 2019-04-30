@@ -4,6 +4,8 @@ import { spacing } from 'styles/spacing';
 const LogoAnchor = styled.a`
   display: block;
   margin-bottom: ${spacing(3)}px;
+  /* override the hover underline */
+  border: none !important;
 `;
 
 const LogoImage = styled.img`
@@ -13,6 +15,6 @@ const LogoImage = styled.img`
 
 export const Logo = () => (
   <LogoAnchor href="/">
-    <LogoImage src="/static/logo.svg" alt="It's Wednesday | Digital application consultancy" />
+    <LogoImage src="/static/images/logo.svg" alt="It's Wednesday | Digital application consultancy" />
   </LogoAnchor>
 );

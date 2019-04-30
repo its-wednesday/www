@@ -166,14 +166,12 @@ export class RollingText extends Component<IRollingTextProps, IRollingTextState>
       ? 0
       : currentPhraseIndex + 1;
 
-    console.log('should start animation');
     this.setState({
       currentPhraseIndex: nextCurrentPhraseIndex,
       isAnimating: true,
     });
 
     setTimeout(() => {
-      console.log('should stop animation');
       this.setState({
         isAnimating: false,
       }, () => this.startIncrementTimer());
@@ -230,7 +228,6 @@ export class RollingText extends Component<IRollingTextProps, IRollingTextState>
     const { phrases, interval } = this.props;
 
     if (phrases.length && interval) {
-      console.log('starting timer');
       this.timer = setTimeout(this.incrementCurrentPhraseIndex.bind(this), interval);
     }
   }

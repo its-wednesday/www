@@ -1,6 +1,6 @@
 export const highlightGradient = `radial-gradient(
-  orange,
-  purple
+  #F43535,
+  #944B94
 )`;
 
 export const gallery = '#ededed';
